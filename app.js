@@ -202,10 +202,10 @@ async function login() {
             allowCredentials: [{
                 id: base64ToBuffer(credentialData.rawId),
                 type: 'public-key',
-                transports: ['nfc', 'usb', 'ble', 'internal']  // 支援所有可能的傳輸方式
+                transports: ['nfc']  // 支援所有可能的傳輸方式
             }],
             timeout: 120000,  // 延長到 120 秒，給使用者更多時間插入智慧卡
-            userVerification: "discouraged"  // 改為 discouraged，避免手機要求額外驗證
+            userVerification: "required"  // 改為 discouraged，避免手機要求額外驗證
         };
         
         // 只有在非 IP 位址時才設定 rpId
