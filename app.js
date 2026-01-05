@@ -111,9 +111,9 @@ async function register() {
             authenticatorSelection: {
                 // 注意：手機和部分智慧卡可能需要移除 authenticatorAttachment 限制
                 // 讓系統自動選擇可用的驗證器
-                userVerification: "discouraged",  // 改為 discouraged，避免手機要求額外驗證
+                userVerification: "required",  // 改為 discouraged，避免手機要求額外驗證
                 requireResidentKey: false,  // 不要求常駐金鑰
-                residentKey: "discouraged"  // 明確指定不需要常駐金鑰
+                residentKey: "required"  // 明確指定不需要常駐金鑰
             },
             timeout: 120000,  // 延長到 120 秒，給使用者更多時間插入智慧卡
             attestation: "none"  // 改為 none，提高相容性
